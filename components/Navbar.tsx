@@ -45,12 +45,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <a
-            href="#contact"
-            className="hidden lg:inline-flex bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl font-semibold transition"
-          >
-            Contact
-          </a>
+          
 
           <button
             onClick={() => setIsOpen(!isOpen)}
