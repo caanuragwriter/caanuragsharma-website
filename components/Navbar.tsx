@@ -1,19 +1,90 @@
-export default function Navbar() {
-  return (
-    <nav className="bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-blue-900">
-          CA Anurag Sharma
-        </h1>
+"use client";
 
-        <div className="flex gap-8 text-gray-700 font-medium">
-          <a href="/">Home</a>
-          <a href="/articles">Articles</a>
-          <a href="/jobs">Jobs</a>
-          <a href="/services">Services</a>
-          <a href="/contact">Contact</a>
+import Link from "next/link";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
+
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const menuItems = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "#about" },
+    { name: "Experience", href: "#experience" },
+    { name: "Services", href: "#services" },
+    { name: "Publications", href: "#publications" },
+    { name: "Knowledge Hub", href: "#knowledge" },
+    { name: "Contact", href: "/contact" },
+  ];
+
+  return (
+    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200 shadow-sm">
+      <div className="max-w-7xl mx-auto px-6">
+
+        <div className="flex items-center justify-between h-20">
+
+          <Link href="/" className="flex flex-col">
+            <span className="text-2xl font-bold text-blue-900">
+              CA Anurag Sharma
+            </span>
+
+            <span className="text-sm text-gray-500">
+              Chartered Accountant
+            </span>
+          </Link>
+
+          <nav className="hidden lg:flex items-center gap-8">
+            {menuItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                className="text-gray-700 hover:text-blue-700 font-medium transition"
+              >
+                {item.name}
+              </a>
+            ))}
+          </nav>
+
+          <a
+            href="#contact"
+            className="hidden lg:inline-flex bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl font-semibold transition"
+          >
+            Contact
+          </a>
+
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="lg:hidden text-blue-900"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+
         </div>
+
       </div>
-    </nav>
+
+      {isOpen && (
+        <div className="lg:hidden bg-white border-t border-gray-200">
+
+          <div className="flex flex-col p-6 gap-5">
+
+            {menuItems.map((item) => (
+              <a
+                key={item.name}
+                href={item.href}
+                onClick={() => setIsOpen(false)}
+                className="text-gray-700 font-medium"
+              >
+                {item.name}
+              </a>
+            ))}
+
+            
+
+          </div>
+
+        </div>
+      )}
+    </header>
   );
 }

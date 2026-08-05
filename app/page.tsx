@@ -6,7 +6,6 @@ import Services from "../components/Services";
 import Books from "../components/Books";
 import KnowledgeHub from "../components/KnowledgeHub";
 import Contact from "../components/Contact";
-import Newsletter from "../components/Newsletter";
 import Footer from "../components/Footer";
 
 export default function Home() {
