@@ -1,92 +1,108 @@
 import Image from "next/image";
 
 export default function Hero() {
+  const practiceAreas = [
+    "GST Advisory",
+    "Income Tax",
+    "Corporate Compliance",
+    "Finance Consulting",
+  ];
+
   return (
-    <section className="bg-gradient-to-br from-blue-50 to-white py-20">
+    <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-white pt-32 pb-24">
+
+      <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-blue-100 blur-3xl opacity-30"></div>
+
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          {/* Left Side */}
+          {/* LEFT */}
+
           <div>
 
-            <span className="inline-block bg-blue-100 text-blue-700 px-4 py-2 rounded-full font-medium mb-6">
-              Chartered Accountant • Finance Writer • Author
-            </span>
+            <div className="inline-flex rounded-full bg-blue-100 px-5 py-2 text-sm font-semibold text-blue-800 tracking-wide">
+              CHARTERED ACCOUNTANT • AUTHOR • FINANCE EDUCATOR
+            </div>
 
-            <h1 className="text-5xl lg:text-7xl font-bold text-blue-900 leading-tight">
-              CA Anurag Sharma
+            <h1 className="mt-8 text-5xl lg:text-6xl font-extrabold leading-tight text-slate-900">
+              CA Anurag
+              <br />
+              Sharma
             </h1>
 
-            <p className="text-xl text-gray-600 mt-6 leading-8">
-              Helping businesses and professionals understand
-              <span className="font-semibold text-blue-700">
-                {" "}
-                Income Tax, GST, MSME, Corporate Law, Excel and AI for Finance.
-              </span>
-            </p>
+            <div className="mt-6 h-1 w-24 rounded-full bg-blue-700"></div>
 
-            <div className="flex gap-4 mt-10">
+            <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600">
+  Chartered Accountant with 10+ years professional experience in finance,
+  taxation, corporate compliance and advisory. Author of publications
+  on finance and corporate life, with a focus on knowledge sharing
+  through technical writing and professional training.
+</p>
 
-              <button className="bg-blue-700 hover:bg-blue-800 text-white px-8 py-4 rounded-xl font-semibold transition">
-                Read Articles
-              </button>
+            <div className="mt-10 flex flex-wrap gap-4">
 
-              <button className="border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white px-8 py-4 rounded-xl font-semibold transition">
-                Book Consultation
-              </button>
+              <a
+                href="#publications"
+                className="rounded-xl bg-blue-700 px-8 py-4 font-semibold text-white hover:bg-blue-800 transition"
+              >
+                View Publications
+              </a>
+
+              <a
+                href="#knowledge"
+                className="rounded-xl border-2 border-blue-700 px-8 py-4 font-semibold text-blue-700 hover:bg-blue-700 hover:text-white transition"
+              >
+                Knowledge Hub
+              </a>
 
             </div>
 
-            <div className="flex flex-wrap gap-3 mt-10">
+            <div className="mt-14">
 
-              <span className="bg-white shadow-md px-4 py-2 rounded-full">
-                GST
-              </span>
+              <p className="text-sm uppercase tracking-[0.2em] text-gray-500 font-semibold">
+                Areas of Practice
+              </p>
 
-              <span className="bg-white shadow-md px-4 py-2 rounded-full">
-                Income Tax
-              </span>
+              <div className="mt-5 flex flex-wrap gap-3">
 
-              <span className="bg-white shadow-md px-4 py-2 rounded-full">
-                MSME
-              </span>
+                {practiceAreas.map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full bg-white border border-gray-200 px-5 py-2 shadow-sm"
+                  >
+                    {item}
+                  </span>
+                ))}
 
-              <span className="bg-white shadow-md px-4 py-2 rounded-full">
-                Corporate Law
-              </span>
-
-              <span className="bg-white shadow-md px-4 py-2 rounded-full">
-                AI for Finance
-              </span>
+              </div>
 
             </div>
 
           </div>
 
-          {/* Right Side */}
-          <div className="flex justify-center">
+          {/* RIGHT */}
 
-            <div className="relative">
+          <div className="relative flex justify-center">
 
-              <div className="absolute inset-0 bg-blue-400 blur-3xl opacity-20 rounded-full"></div>
+            <div className="absolute w-[520px] h-[520px] rounded-full bg-blue-100 opacity-40 blur-3xl"></div>
 
-              <Image
-                src="/images/anurag.jpg"
-                alt="CA Anurag Sharma"
-                width={450}
-                height={550}
-                className="relative rounded-3xl shadow-2xl object-cover"
-                priority
-              />
+            <div className="absolute right-0 top-10 h-56 w-56 rounded-full border-[28px] border-blue-100"></div>
 
-            </div>
+            <Image
+              src="/images/anurag.jpg"
+              alt="CA Anurag Sharma"
+              width={520}
+              height={620}
+              priority
+              className="relative rounded-[32px] border-8 border-white shadow-2xl"
+            />
 
           </div>
 
         </div>
 
       </div>
-    </section>
+          </section>
   );
 }

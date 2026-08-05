@@ -1,100 +1,65 @@
-export default function Books() {
-  const books = [
-    {
-      title: "2+2 = 20 (The Corporate Maths)",
-      desc: "A humorous take on corporate life, office politics and the realities of the corporate world.",
-      badge: "⭐ Featured",
-      amazon: "#",
-      color: "bg-blue-700",
-    },
-    {
-      title: "Mirage in the Mountains",
-      desc: "A fiction novel exploring life, emotions and human relationships.",
-      badge: "",
-      amazon: "#",
-      color: "bg-green-600",
-    },
-    {
-      title: "Reflections – The World as I Feel",
-      desc: "A collection of poems and reflections on life and society.",
-      badge: "",
-      amazon: "#",
-      color: "bg-purple-600",
-    },
-    {
-      title: "Credit Analysis",
-      desc: "A practical guide to analysing financial statements and evaluating creditworthiness.",
-      badge: "",
-      amazon: "#",
-      color: "bg-orange-600",
-    },
-    {
-      title: "Basics of Finance and Taxation",
-      desc: "An introductory guide for students and professionals beginning their finance journey.",
-      badge: "",
-      amazon: "#",
-      color: "bg-red-600",
-    },
-  ];
+import BookCard from "./BookCard";
 
+const books = [{
+  title: "2+2 = 20 (The Corporate Maths)",
+  image: "/images/books/corporate-maths.jpeg",
+  description:
+    "A humorous and insightful look at corporate life through real experiences, satire and workplace stories.",
+  button: "View on Amazon",
+  link: "https://www.amazon.in/2-20-Corporate-Maths/dp/9370462929",
+},
+  {
+    title: "Mirage in the Mountains",
+    description:
+      "A fiction novel exploring emotions, aspirations and the journey of life.",
+    image: "/images/books/mirage.jpeg",
+    button: "Buy on Amazon",
+    link: "https://www.amazon.com/dp/9388930002?lv=shuf&channelId=510&plpRedirect=mhFallback",
+  },
+  {
+    title: "Reflections – The World as I Feel",
+    description:
+      "A collection of poems and reflections capturing life's emotions and experiences.",
+    image: "/images/books/reflections.jpeg",
+    button: "Buy on Amazon",
+    link: "https://www.amazon.in/REFLECTIONS-world-as-I-feel/dp/9363308545/",
+  },
+  {
+    title: "Credit Analysis",
+    description:
+      "A practical handbook on financial statement analysis and credit evaluation.",
+    image: "/images/books/credit-analysis.jpeg",
+    button: "Buy on Amazon",
+    link: "https://www.amazon.in/CREDIT-ANALYSIS-HANDBOOK-ANURAG-SHARMA-ebook/dp/B09KZLQSV8",
+  },
+  {
+    title: "Basic Concepts Relating to Finance & Taxation",
+    description:
+      "A practical publication introducing the fundamentals of finance and taxation.",
+    image: "/images/books/finance-taxation.jpeg",
+    button: "Read on CAclubIndia",
+    link: "https://www.caclubindia.com/share_files/basic-concepts-relating-to-finance-and-taxation-82406.asp",
+  },
+];
+
+export default function Books() {
   return (
     <section className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-5xl font-bold text-center text-gray-900">
+          Books & Publications
+        </h2>
 
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-blue-900">
-            Published Books
-          </h2>
+        <p className="text-center text-gray-600 mt-4 max-w-3xl mx-auto">
+          Sharing knowledge through books on Corporate Life, Finance,
+          Credit Analysis, Fiction and Poetry.
+        </p>
 
-          <p className="text-gray-600 text-xl mt-5 max-w-3xl mx-auto">
-            Writing has always been my passion. These books reflect my
-            professional experience, creativity and love for knowledge sharing.
-          </p>
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-
+        <div className="mt-16 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {books.map((book, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-3xl shadow-lg hover:shadow-2xl transition duration-300 overflow-hidden"
-            >
-
-              <div className={`${book.color} h-56 flex items-center justify-center text-white text-2xl font-bold text-center px-6`}>
-                {book.title}
-              </div>
-
-              <div className="p-8">
-
-                {book.badge && (
-                  <span className="bg-yellow-100 text-yellow-800 px-3 py-1 rounded-full text-sm font-semibold">
-                    {book.badge}
-                  </span>
-                )}
-
-                <h3 className="text-2xl font-bold text-blue-900 mt-5">
-                  {book.title}
-                </h3>
-
-                <p className="text-gray-600 mt-4 leading-7">
-                  {book.desc}
-                </p>
-
-                <a
-                  href={book.amazon}
-                  target="_blank"
-                  className="inline-block mt-8 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl font-semibold transition"
-                >
-                  View on Amazon →
-                </a>
-
-              </div>
-
-            </div>
+            <BookCard key={index} {...book} />
           ))}
-
         </div>
-
       </div>
     </section>
   );
