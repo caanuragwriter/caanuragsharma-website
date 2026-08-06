@@ -34,7 +34,7 @@ export default function Hero() {
             <div className="mt-6 h-1 w-24 rounded-full bg-blue-700"></div>
 
             <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-600">
-  Chartered Accountant with 10+ years professional experience in finance,
+  Chartered Accountant with professional experience in finance,
   taxation, corporate compliance and advisory. Author of publications
   on finance and corporate life, with a focus on knowledge sharing
   through technical writing and professional training.
