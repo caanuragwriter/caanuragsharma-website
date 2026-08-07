@@ -601,6 +601,25 @@ export default function Mentorship() {
         className="border-2 border-white hover:bg-white hover:text-blue-700 px-8 py-4 rounded-xl font-semibold transition"
       >
         Contact Me
+<div className="mt-10 flex flex-wrap gap-6 text-sm text-slate-600">
+
+  <div className="flex items-center gap-2">
+    ✅ One-to-One Sessions
+  </div>
+
+  <div className="flex items-center gap-2">
+    💻 Online via Google Meet
+  </div>
+
+  <div className="flex items-center gap-2">
+    📅 Flexible Scheduling
+  </div>
+
+  <div className="flex items-center gap-2">
+    🎯 Personalized Guidance
+  </div>
+
+</div>
       </a>
 
     </div>
