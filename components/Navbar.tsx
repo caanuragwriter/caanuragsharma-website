@@ -12,7 +12,7 @@ export default function Navbar() {
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Books", href: "/#books" },
-    { name: "Mentorship", href: "/mentorship" },
+    { name: "Mentorship Program", href: "/mentorship" },
     { name: "Contact", href: "/contact" },
   ];
 
