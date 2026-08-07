@@ -44,10 +44,10 @@ const books = [{
 
 export default function Books() {
   return (
-    <section className="py-24 bg-gray-50">
+    <section id="books" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-5xl font-bold text-center text-gray-900">
-          Books & Publications
+          Books by CA Anurag Sharma 
         </h2>
 
         <p className="text-center text-gray-600 mt-4 max-w-3xl mx-auto">

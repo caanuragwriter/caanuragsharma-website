@@ -12,8 +12,8 @@ export default function Navbar() {
     { name: "About", href: "#about" },
     { name: "Experience", href: "#experience" },
     { name: "Services", href: "#services" },
-    { name: "Publications", href: "#publications" },
-    { name: "Knowledge Hub", href: "#knowledge" },
+    { name: "Books", href: "#publications" },
+    { name: "Mentorship", href: "/mentorship" },
     { name: "Contact", href: "/contact" },
   ];
 
