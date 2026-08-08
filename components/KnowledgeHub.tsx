@@ -1,10 +1,11 @@
 export default function KnowledgeHub() {
   const topics = [
-    {
-      title: "GST",
-      description:
-        "GST updates, QRMP Scheme, e-Invoicing, returns, compliance and practical guidance.",
-    },
+     {
+  title: "GST",
+  description:
+    "GST updates, QRMP Scheme, e-Invoicing, returns, compliance and practical guidance.",
+  link: "/images/gst-update.jpg",
+},
     {
       title: "Income Tax",
       description:
@@ -57,19 +58,29 @@ export default function KnowledgeHub() {
             key={topic.title}
             className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-lg transition"
           >
-            <h3 className="text-2xl font-semibold text-blue-700">
-              {topic.title}
-            </h3>
+            {topic.image && (
+  <img
+    src={topic.image}
+    alt={topic.title}
+    className="w-full h-32 object-cover rounded-xl mb-5"
+  />
+)}
 
+<h3 className="text-2xl font-semibold text-blue-700">
+  {topic.title}
+</h3>
             <p className="mt-4 text-gray-600 leading-7">
               {topic.description}
             </p>
 
-            <button
-              className="mt-8 text-blue-700 font-semibold hover:underline"
-            >
-              Read Articles →
-            </button>
+           <a
+  href={topic.link || "#"}
+  target="_blank"
+  rel="noopener noreferrer"
+  className="mt-8 inline-block text-blue-700 font-semibold hover:underline"
+>
+  Read Articles →
+</a>
           </div>
         ))}
 
