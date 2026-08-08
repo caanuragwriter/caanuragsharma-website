@@ -58,13 +58,7 @@ export default function KnowledgeHub() {
             key={topic.title}
             className="rounded-2xl border border-gray-200 bg-white p-8 shadow-sm hover:shadow-lg transition"
           >
-            {topic.image && (
-  <img
-    src={topic.image}
-    alt={topic.title}
-    className="w-full h-32 object-cover rounded-xl mb-5"
-  />
-)}
+           
 
 <h3 className="text-2xl font-semibold text-blue-700">
   {topic.title}
