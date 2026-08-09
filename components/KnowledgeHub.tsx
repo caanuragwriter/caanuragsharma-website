@@ -6,11 +6,12 @@ export default function KnowledgeHub() {
     "GST updates, QRMP Scheme, e-Invoicing, returns, compliance and practical guidance.",
   link: "/images/gst-update.jpg",
 },
-    {
-      title: "Income Tax",
-      description:
-        "Income-tax Act, 2025, ITRs, TDS, TCS, tax planning and advisory.",
-    },
+   {
+  title: "Income Tax",
+  description:
+    "Income-tax Act, 2025, ITRs, TDS, TCS, tax planning and advisory.",
+  link: "/images/tax-update.jpg",
+},
     {
       title: "MSME",
       description:
