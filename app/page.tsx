@@ -8,6 +8,8 @@ import KnowledgeHub from "../components/KnowledgeHub";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <>
@@ -24,13 +26,10 @@ export default function Home() {
       <Books />
 
       <KnowledgeHub />
+
       <Contact />
 
-<Footer />
-
-
-      
-      
+      <Footer />
     </>
   );
 }
